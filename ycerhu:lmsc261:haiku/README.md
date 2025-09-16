@@ -2,7 +2,14 @@
 
 ## Yu Chun Chan 9/16/2025
 
-#####H5 In Terminal
+__Notes about the process:__
+
+forget to add -o filename.aiff and change the location to haiku file within the itp file.
+
+tried to directly cd haiku but it requires step by step from the larget folder to the smallet folder
+
+
+__Documentation: Terminal__
 
 Last login: Tue Sep 16 07:42:25 on ttys000
 
@@ -40,5 +47,5 @@ chaasiu@Yu-Chuns-macbook haiku % say Ate my kid, morning, silence over cereal, t
 
 chaasiu@Yu-Chuns-macbook haiku % say Ate my kid, morning, silence over cereal, they cook dinner now -o haiku.aiff
 
-Notes:
-forget to add -o filename.aiff and change the location to haiku file within the itp file.
+
+
