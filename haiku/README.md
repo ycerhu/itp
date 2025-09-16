@@ -2,14 +2,14 @@
 
 ## Yu Chun Chan 9/16/2025
 
-Notes about the process:
+__Notes about the process:__
 
 forget to add -o filename.aiff and change the location to haiku file within the itp file.
 
 tried to directly cd haiku but it requires step by step from the larget folder to the smallet folder
 
 
-Documentation: Terminal 
+__Documentation: Terminal__
 
 Last login: Tue Sep 16 07:42:25 on ttys000
 
