@@ -3,7 +3,7 @@
 #### Chapter 1
 #####One thing I knew
 While bits being the most fundamental data type, I also know next basic data type to be 'strings', series of bits. Instead of numbers, data is represented by combination of character that has number attached to it based on the Unicode Standard. 
-######One thing I didn't know
+#####One thing I didn't know
 The reading helped me understand that ther are unary and ternary operations other than boolean operation. Essentially, they are types of computer operations based on different amount of values, considerations. Unary being 1 values (e.g. naming), Boolean being 2 values (e.g. true/false), Ternary being 3 values (e.g. make bolean decision based on a third value). 
 
 #### Chapter 2
