@@ -8,9 +8,11 @@ This is because it is a F to C converter instead of C to F converter.
 There I use 'let' for value of f
 And 'const' for value of c
 
-let f = 99;
-const c = (f + -32) * 5 / 9;
-console.log (c);
+`let f = 99;`
+
+`const c = (f + -32) * 5 / 9;`
+
+`console.log (c);`
 
 Finally, I tested on Sandbox as shown in image attached.
 ![Test On Sandbox](Test%20on%20Sandbox.png)
