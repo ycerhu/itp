@@ -13,6 +13,5 @@ const c = (f + -32) * 5 / 9;
 console.log (c);
 
 Finally, I tested on Sandbox as shown in image attached.
-![alt text](Test on Sandbox)
-
+![Test On Sandbox](Test%20on%20Sandbox.png)
 
