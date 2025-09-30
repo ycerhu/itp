@@ -35,8 +35,8 @@ Result:
 
 ##Debugging
 First Attempt: Realizing I forgot to add quotation for FizzBuzz, Fizz and Buzz. 
-![Screenshot 2025 09 30 At 11.21.11 AM](/var/folders/b2/z5jzw7ks2sn05crzxbmcbnq80000gn/T/TemporaryItems/NSIRD_screencaptureui_5mwMN3/Screenshot%202025-09-30%20at%2011.21.11 AM.png)
+![Pre Debug](Pre-debug.png)
 
 
 Result: 
-![Screenshot 2025 09 30 At 11.23.23 AM](/var/folders/b2/z5jzw7ks2sn05crzxbmcbnq80000gn/T/TemporaryItems/NSIRD_screencaptureui_3mAFxu/Screenshot%202025-09-30%20at%2011.23.23 AM.png)
+![Post Debug](Post-debug.png)
