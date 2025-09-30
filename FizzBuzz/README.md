@@ -1,6 +1,6 @@
 # FizzBuzz on javaScript
 
-##Thought Process
+## Thought Process
 
 1) I am counting from 1-100: I need to 'let' i be 1 instead of 0; I need to make i < 100 instead of 100; I am having 'i++' as I am adding one for each count)
 
@@ -33,7 +33,7 @@ Result:
 `} `
 
 
-##Debugging
+## Debugging
 
 First Attempt: Realizing I forgot to add quotation for FizzBuzz, Fizz and Buzz. 
 ![Pre Debug](Pre-debug.png)
