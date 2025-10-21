@@ -5,7 +5,7 @@ I decided to build an icon representing my instrument, erhu. I created a draft o
 
 For clarity purpose, I decided to add a border for the circle, which leads to one more circle being used. I decided to create border by layering a white cricle beneath a slightly bigger dark circle. 
 
-![Screenshot 2025 10 21 At 1.54.00 AM](Screenshots/Screenshot%202025-10-21%20at%201.54.00 AM.png)
+![Phase 1](Phase%201.jpeg)
 
 ### Phase 2
 Phase 2 was straightforward. I began with creating the canvas and added 'noStroke' to disable drawing stroke. Under function draw (), I started creating shapes and testing their coordinates by trial and error in the order of: 1) dark circle), 2) white circle, 3) tiny rectangle, 4+5) 2 thin rectangles. The order matters because it determines the layering of these shapers. The earlier, the more bottom layer the shape will locate. 
