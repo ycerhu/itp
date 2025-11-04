@@ -1,5 +1,5 @@
 # Band - Group Project
-### Link to Band Website
+### [Link to Band Website](https://ezramemphis.github.io/Kandy-Krush/)
 
 ### Problems faced
 Problem 1: Text not aligning to the center
