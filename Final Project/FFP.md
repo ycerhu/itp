@@ -6,12 +6,15 @@ A cursor-controlled interactive concert visuals for my artistic direction projec
 
 
 ### Resources 
-1) 
+1) [p5.js Animating with Media Object](https://p5js.org/tutorials/animating-with-media-objects/)
+2) [Cursor interaction](https://happycoding.io/tutorials/p5js/input)
+3) [PSLIVE: HY5_Hydra](https://teddavis.org/p5live/)
+![HY5 Hydra](HY5_Hydra.png)
+
++more visual references below
 
 ### Paragraph Overview 
-For my final project, I am planning to create an interactive concert visuals for my artistic direction passion project 'Lichtbogen'(description below) on p5.js and P5LIVE. Interested in pursuing a career in creative direction creaitng multimedia concerts, I want to preparing myself the required empathy and professionalism in communication with art collaborators as well as experiencing the creative process of visual media programming to make more techincal comments supporting my aesthetics pursuit in the future. The final project will be creating visuals for an original music I made with my friends, Daven, back in 2025 Summer. (Audio Reference:[Untitled, Daven Dubois](https://ycerhu.github.io/)) In my imagination for the music, I am aiming to include elements including 'whale', 'water movement', 'rising bubbles', 'chinese ink', and 'star night'. My job for the project will be creating the objects representing these elements and try to animate them, or even creating a cursor-controlled interactive protocal, and develop it to motion-captured in the future.
-
-a sonic and visual journey capturing sparks of creative connection and charting my passage from Hong Kong to Boston
+For my final project, I am planning to create an interactive concert visuals for my artistic direction passion project 'Lichtbogen'(description below) on p5.js and P5LIVE. Interested in pursuing a career in creative direction creaitng multimedia concerts, I want to preparing myself the required empathy and professionalism in communication with art collaborators as well as experiencing the creative process of visual media programming to make more techincal comments supporting my aesthetics pursuit in the future. The final project will be creating visuals for an original music I made with my friends, Daven, back in 2025 Summer. (Audio Reference: [Untitled, Daven Dubois](https://ycerhu.github.io/)) In my imagination for the music, I am aiming to include elements including 'whale', 'water movement', 'rising bubbles', 'chinese ink', and 'star night'. My job for the project will be creating the objects representing these elements and try to animate them, or even creating a cursor-controlled interactive protocal, and develop it to motion-captured in the future.
 
 ### Outcomes
 ##### GOOD: 
@@ -19,7 +22,7 @@ Creating animated looping/randomized visuals for 'Untitled, Daven Dubois' on p5.
 ##### BETTER: 
 Creating cursor-controlled interactive visuals for 'Untitled, Daven Dubois' on p5.js and P5LIVE: containing elements 'whale', 'water movement', rising bubbles'; and textures ' chinese ink' and 'start night'
 ##### BEST: 
-Creating cursor-controlled interactive visuals for 'Untitled, Daven Dubois' on p5.js and P5LIVE: containing elements 'whale', 'water movement', rising bubbles'; and textures ' chinese ink' and 'start night'. Outcome should be aesthetically consistent and pleasing according to the 'Litchbogen' moodboard (Moodboard[Project website](https://ycerhu.github.io/))
+Creating cursor-controlled interactive visuals for 'Untitled, Daven Dubois' on p5.js and P5LIVE: containing elements 'whale', 'water movement', rising bubbles'; and textures ' chinese ink' and 'start night'. Outcome should be aesthetically consistent and pleasing according to the 'Litchbogen' moodboard (Moodboard: [Project website](https://ycerhu.github.io/))
 
 ### About 'Lichtbogen'
 In the realm of electronics, Lichtboge means “electric arc”—a luminous burst of energy bridging space and sparking transformation. This radiant metaphor resonates deeply with me.
@@ -34,4 +37,12 @@ It is more than a concert.
 
 It is a shared moment of connection, where art and spirit ignite together, 
 forming Lichtbogen.
+
+### Image References
+##### Soul, Pixar Studio
+[Video](https://www.youtube.com/watch?v=c1AyM118JbU)
+![Image](Screenshot%202025-11-04%20at%208.43.22 AM%202.png)
+
+##### Moodboard
+![Moodboard](Moodboard.png)
 
