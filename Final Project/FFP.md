@@ -24,6 +24,16 @@ Creating cursor-controlled interactive visuals for 'Untitled, Daven Dubois' on p
 ##### BEST: 
 Creating audio-reactive visuals for 'Untitled, Daven Dubois' on p5.js and P5LIVE: containing elements 'whale', 'water movement', rising bubbles'; and textures ' chinese ink' and 'start night'. Outcome should be aesthetically consistent and pleasing according to the 'Litchbogen' moodboard (Moodboard: [Project website](https://ycerhu.github.io/))
 
+### Timeline
+11/4/2025: Proposal Submission (discussion with Rachel about 'audio reactive' or 'cursor-controlled)
+11/11/2025: Pseudocode - Structure/Steps of the Action Plan
+11/18/2025: Creating objects, Researching on Reference Codes for interactive
+12/25/2025: Draft 1 (Basic Structure)
+12/2/2025: Aesthetically enhanced (schedule office hour to review)
+12/7/2025: 95%-100% ready to submit
+12/9/2025: Deadline
+
+
 ### About 'Lichtbogen'
 In the realm of electronics, Lichtboge means “electric arc”—a luminous burst of energy bridging space and sparking transformation. This radiant metaphor resonates deeply with me.
 
