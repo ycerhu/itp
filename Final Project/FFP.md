@@ -26,11 +26,17 @@ Creating audio-reactive visuals for 'Untitled, Daven Dubois' on p5.js and P5LIVE
 
 ### Timeline
 11/4/2025: Proposal Submission (discussion with Rachel about 'audio reactive' or 'cursor-controlled)
+
 11/11/2025: Pseudocode - Structure/Steps of the Action Plan
+
 11/18/2025: Creating objects, Researching on Reference Codes for interactive
+
 12/25/2025: Draft 1 (Basic Structure)
+
 12/2/2025: Aesthetically enhanced (schedule office hour to review)
+
 12/7/2025: 95%-100% ready to submit
+
 12/9/2025: Deadline
 
 
