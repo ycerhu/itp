@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FFP3 Audio-Reactive Noisy Circles — Project Documentation</title>
+  <style>
+    body{font-family: Arial, Helvetica, sans-serif; color:#111; line-height:1.4}
+    h1{font-size:20pt}
+    h2{font-size:14pt}
+    p{font-size:11pt}
+    table{border-collapse:collapse; width:100%; margin-top:8px}
+    th,td{border:1px solid #444; padding:6px; text-align:left; font-size:10pt}
+    .code{font-family:monospace; background:#f4f4f4; padding:3px 6px}
+  </style>
+</head>
+<body>
+  <h1>FFP3 — Audio-Reactive Noisy Circles</h1>
+
+  <h2>Overview</h2>
+  <p>This project is a p5.js sketch that renders multiple concentric noisy circles together with a Perlin-noise flow-field particle system. It also loads an audio file (<span class="code">DavenYu.mp3</span>), analyses the audio (FFT), and makes the circles, glow, and particle motion react to different audio frequency bands.</p>
+
+  <h2>Files</h2>
+  <p>The main files in the project root relevant to this documentation are:</p>
+  <ul>
+    <li><span class="code">index.html</span> — page that loads p5 and the sketch.</li>
+    <li><span class="code">sketch.js</span> — primary sketch source. (Contains preload, setup, draw, particle code and audio-reactive logic.)</li>
+    <li><span class="code">DavenYu.mp3</span> — audio used for FFT-driven visuals.</li>
+    <li><span class="code">whale 2.jpg</span> — background image used behind the visuals.</li>
+    <li><span class="code">Project_Documentation.doc</span> — this document (Word-compatible HTML file).</li>
+  </ul>
+
+  <h2>Step-by-step Explanation</h2>
+
+  <h3>1. Preload</h3>
+  <p>The sketch preloads the background image and the audio file using p5's <span class="code">loadImage()</span> and <span class="code">loadSound()</span>. Preloading guarantees the resources are ready before setup runs.</p>
+
+  <h3>2. Setup</h3>
+  <p>In <span class="code">setup()</span> a full-window canvas is created. The sketch configures p5.sound's <span class="code">p5.FFT</span> analyzer and sets it to use the preloaded audio if available. A trails graphics buffer (<span class="code">trailG</span>) is created for persistent particle trails, and a large set of particles is instantiated (the default particle count in the final code is high to create dense flow patterns).</p>
+
+  <h3>3. Draw loop</h3>
+  <p>Each frame, the sketch:</p>
+  <ol>
+    <li>Draws the background image scaled to the canvas and overlays a dimming rectangle to reduce brightness.</li>
+    <li>Updates audio-energy values from the FFT: bass, mid, and treble bands are sampled into <span class="code">audioLow</span>, <span class="code">audioMid</span>, and <span class="code">audioHigh</span>.</li>
+    <li>Uses the audio bands to compute combined metrics used across visuals (for example, a combinedAudio value that drives color shifts).</li>
+    <li>Fades the trails buffer slightly every frame using a canvas composite operation so previous particle trails fade to transparency over time.</li>
+    <li>Updates the particle system: each particle samples a Perlin-noise-based flow field (noise sampled at its canvas coordinates), accelerates along a direction derived from that noise, and draws short line segments to the trails buffer. Particle acceleration and maximum speed are modulated strongly by the audio bass band so particles pulse with the beat.</li>
+    <li>Composites the trails buffer onto the main canvas so all older particle motion persists visually.</li>
+    <li>Draws 21 concentric noisy circles centered on the canvas. Each circle's per-vertex radius is perturbed by Perlin noise (polar coordinates), and the noise amplitude is scaled by audio mid-energy so the circle wobble increases with mid-frequency intensity. The circle glow (shadow blur) is modulated by treble energy. Circle color is audio-reactive and shifts from white to black as combined audio energy rises.</li>
+    <li>Increments the noise z-offset (<span class="code">zoff</span>) each frame. The rate of change of <span class="code">zoff</span> is also influenced by treble energy so motion becomes livelier with higher treble content.</li>
+  </ol>
+
+  <h3>4. Interaction</h3>
+  <p>Because browsers require a user gesture to start audio context, the sketch starts/stops playback when the user clicks (or taps) the canvas. The mouse/touch handlers call <span class="code">bgSound.loop()</span> and <span class="code">bgSound.stop()</span> appropriately and trigger <span class="code">userStartAudio()</span> when needed.</p>
+
+  <h2>Audio-reactive mappings (summary)</h2>
+  <ul>
+    <li><b>Bass (audioLow)</b>: drives particle acceleration, particle max speed, and the intensity of particle movement. Stronger bass -> faster, more erratic particle motion.</li>
+    <li><b>Mid (audioMid)</b>: increases circles' noise amplitude (makes them wobble more) so melodic/mid-range energy visibly distorts the rings.</li>
+    <li><b>Treble (audioHigh)</b>: boosts circle glow and increases noise z evolution speed for crisper, faster animations during treble-heavy passages.</li>
+    <li><b>Combined audio</b>: used to compute a color shift metric that maps lower energy to white and higher energy to darker shades (white → black by default). Particle trail alpha also increases with combined energy.</li>
+  </ul>
+
+  <h2>Tweak suggestions</h2>
+  <p>If the visuals are too sensitive or too slow you can tune the following parameters in <span class="code">sketch.js</span>:</p>
+  <ul>
+    <li><span class="code">particleCount</span> — reduce to improve performance (e.g., 1200 or 800 instead of the maximum used).</li>
+    <li><span class="code">flowScale</span> — changes noise spatial frequency of the flow field; larger values make smaller flow features.</li>
+    <li>Audio-to-visual mapping ranges (search for mappings like <span class="code">map(audioMid, ...)</span>).</li>
+    <li><span class="code">fadeAmount</span> used to fade trails — increase to fade trails faster for cleaner visuals.</li>
+  </ul>
+
+  <h2>Function/Table — functions & definitions used in the sketch</h2>
+  <table>
+    <thead>
+      <tr><th>Function / Definition</th><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="code">preload()</span></td><td>p5 lifecycle</td><td>Loads <span class="code">whale 2.jpg</span> and <span class="code">DavenYu.mp3</span> before setup.</td></tr>
+      <tr><td><span class="code">setup()</span></td><td>p5 lifecycle</td><td>Initializes canvas, FFT analyzer, trails buffer, and particle array; sets noise detail.</td></tr>
+      <tr><td><span class="code">draw()</span></td><td>p5 lifecycle</td><td>Main render loop: updates audio FFT, fades trails, updates particles, draws trails and circles, advances noise <span class="code">zoff</span>.</td></tr>
+      <tr><td><span class="code">windowResized()</span></td><td>p5 event</td><td>Handles canvas resize: recreates the trails buffer and constrains particle positions to the new canvas.</td></tr>
+      <tr><td><span class="code">mousePressed()</span></td><td>interaction</td><td>Toggles audio playback and calls <span class="code">userStartAudio()</span> to enable audio in browsers.</td></tr>
+      <tr><td><span class="code">touchStarted()</span></td><td>interaction</td><td>Calls <span class="code">mousePressed()</span> for touch compatibility.</td></tr>
+      <tr><td><span class="code">Particle (class)</span></td><td>class</td><td>Represents a flow-field particle with position, velocity, and methods to follow the Perlin flow, update, wrap edges, and render trails.</td></tr>
+      <tr><td><span class="code">Particle.constructor()</span></td><td>method</td><td>Initializes particle position, velocity and base max speed.</td></tr>
+      <tr><td><span class="code">Particle.follow(scale, z, audioAccel, speedFactor)</span></td><td>method</td><td>Samples Perlin noise at particle position to derive an angle, applies acceleration along that angle; audio parameters modulate acceleration and max speed.</td></tr>
+      <tr><td><span class="code">Particle.update()</span></td><td>method</td><td>Moves particle according to its velocity (stores previous position for trails).</td></tr>
+      <tr><td><span class="code">Particle.edges()</span></td><td>method</td><td>Wraps particle around canvas edges so particles reappear on the opposite side (toroidal space).</td></tr>
+      <tr><td><span class="code">Particle.show(g)</span></td><td>method</td><td>Renders a short line segment from previous to current position on the provided graphics buffer; trail color/alpha respond to combined audio.</td></tr>
+      <tr><td><span class="code">p5.FFT</span></td><td>p5.sound</td><td>Used to obtain frequency-band energy levels (bass/mid/treble) via <span class="code">getEnergy()</span> which drive the visual mappings.</td></tr>
+      <tr><td><span class="code">trailG</span></td><td>Graphics buffer</td><td>Offscreen graphics used to draw and persist particle trails between frames; trails are faded each frame with a composite operation.</td></tr>
+      <tr><td><span class="code">zoff</span></td><td>global var</td><td>Third dimension for Perlin noise; animated to evolve noise over time; rate affected by treble energy.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Notes</h2>
+  <p>This document is intentionally concise and aims to make the project easy to understand, extend or tune. If you want the document exported as a native <span class="code">.docx</span> package instead of this HTML-based Word document, I can produce that as well (it requires packaging a proper .docx container). This HTML-based .doc file opens directly in Microsoft Word and LibreOffice and is editable there.</p>
+
+  <h2>Next steps I can help with</h2>
+  <ul>
+    <li>Add an on-screen control panel (sliders) to tweak particle count, audio sensitivity, fade amount, and color mapping live.</li>
+    <li>Export a high-resolution static frame or a short rendered GIF of the animation.</li>
+    <li>Convert this HTML document into a .docx if you prefer a native Word file.</li>
+  </ul>
+
+  <p>— End of documentation —</p>
+</body>
+</html>
