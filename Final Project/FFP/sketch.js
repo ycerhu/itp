@@ -128,8 +128,8 @@ function draw() {
 			const c = currentColorVal;
 			drawingContext.shadowColor = `rgba(${c},${c},${c},0.95)`;
 			// shadowBlur scales with circle size (larger circles glow more) and responds to treble (more sensitive)
-			const trebleBoost = map(audioHigh, 0, 255, 1, 4.0);
-			drawingContext.shadowBlur = lerp(6, 36, t) * trebleBoost;
+			const trebleBoost = map(audioHigh, 0, 255, 1, 10.0);
+			drawingContext.shadowBlur = lerp(6, 360, t) * trebleBoost;
 		}
 
 		// first (glow) pass

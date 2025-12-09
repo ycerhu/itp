@@ -58,7 +58,7 @@ Instead, I will talk about the project according to the different components in 
 2. FFT + Perlin noise Flow Field 
 3. FFT + Noisy Circles 
 
-###p5.sound: loading audio file
+### p5.sound: loading audio file
 
 `function preload() {
 	bgImg = loadImage('whale 2.jpg');
@@ -66,6 +66,18 @@ Instead, I will talk about the project according to the different components in 
 }`
 
 Instead of `function setup()`, I first created a `function preload()` to prevent delay in the appearance of media file I imported. I learnt from [Strings-art by Patt Vira](https://youtu.be/qH7ZgQghKUU?si=GGHGhibbohgFtso) and [p5.sound](https://www.youtube.com/watch?v=Pn1g1wjxl_0&list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW) that it requires time for the program to load media file if it is placed in `function setup()`. However `function preload()` can serve like a pre-set-up so that they will be loaded already and ready to launch once the program is launched.
+
+
+#### Summary for the next two points:
+
+I use the FFT function to retrieve data of the 'energy', aka volume, of 3 frequency band: bass, mid, treble. Why not high/mid/low? Because they are predefined name of the getEnergy() function. 
+
+Bass volume is affecting acceleration of the particles. 
+
+Mid volume is affecting the distortion of the noisy circle. 
+
+Treble volume is affecting the shadowBlur on the circles + 
+
 
 ### FFT + Perlin Noise Flow Field
 
