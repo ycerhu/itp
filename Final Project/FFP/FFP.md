@@ -1,6 +1,7 @@
 # [LMSC-261: Final Project] 
 # Concert Visuals for 'Lichtbogen' with p5.js 
 
+[Quick Link to view the video](https://youtu.be/NkykMJ3mp1M)
 
 ## Introduction
 This report aims to provide a detail documentation of the creation process of my final project "Concert Visuals for 'Lichtbogen" with p5.js". Before stepping into the process, I will first recap on the initial project description as well as targeted outcomes stated in the proeject proposal. The focus of the project changed after the exploration and research stage during the first 2 weeks. Then, I will dive into explaning my codes and describing how I encountered and learnt new functions. 
@@ -44,7 +45,7 @@ Creating an audio-reactive animation that changes according to the imported audi
 
 Moreover, after the exploration in the previous weeks, I decided to narrow down the tools I will try to use.
 
-I will focus on using: 1) Perlin Noise Flow Field -- foam, audio-reactive; 2) Noisy Circle -- waves, audio reactive; 3) p5.sound -- for loading music.
+I will focus on using: 1- Perlin Noise Flow Field -- foam, audio-reactive; 2-  Noisy Circle -- waves, audio reactive; 3- p5.sound -- for loading music.
 
 I rejected the idea of using p5.brush despite its beautiful design as it is more suitable for still image or low fps artwork which doesn't suit the high sample rate audio reactive project. Also the brush is basically hectagon and rectangle images which don't offer the desired flowy texture.
 
@@ -81,11 +82,8 @@ Treble volume is affecting the shadowBlur on the circles +
 
 ### FFT + Perlin Noise Flow Field
 
-Step 1: Create an array `particles` where each particle is spawn at a random x,y location
 
-`for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle(random(width), random(height)));
-}`
+
 
 
 
