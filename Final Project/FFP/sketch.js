@@ -96,7 +96,7 @@ function draw() {
 	translate(width / 2, height / 2);
 
 	const minDim = min(width, height);
-	const numCircles = 21; // original + 20 more = 21 concentric noisy circles
+	const numCircles = 21; 
 	const angleStep = 0.02;
 
 	for (let i = 0; i < numCircles; i++) {
@@ -196,30 +196,7 @@ function windowResized() {
 }
 
 function mousePressed() {
-	// Ensure user gesture activates audio context in browsers
-	if (typeof userStartAudio === 'function') {
-		userStartAudio().catch(() => {});
-	}
-
-	if (!bgSound) return;
-
-	if (bgSound.isPlaying && bgSound.isPlaying()) {
-		bgSound.stop();
-	} else if (bgSound.play) {
-		// loop so audio continues until stopped by next click
-		if (bgSound.isLooping && bgSound.isLooping()) {
-			bgSound.stop();
-		} else {
-			bgSound.setVolume(1.0);
-			bgSound.loop();
-		}
-	}
-}
-
-// touch compatibility
-function touchStarted() {
-	mousePressed();
-	return false;
+	bgSound.play();
 }
 
 // Particle class: simple verlet-ish particle with velocity, follows a Perlin flow field
