@@ -80,8 +80,10 @@ Mid volume is affecting the distortion of the noisy circle.
 Treble volume is affecting the shadowBlur on the circles + 
 
 
-### FFT + Perlin Noise Flow Field
+### Reflection
 
+Unfortunately, I still have to reply on AI tools for integrating the audio reactive components of my project by the end of the deadline, and can only achieve a randomized animation as the bottom line targeted outcome. However, through the process of codealong, prompting, reading through all the references, I learnt a lot of new functions like `getEnergy`,`preload`
+, `map`, `lerp`, `FFT.`, and more. I look forward spending more time working on it and bring it to my performance.
 
 
 
